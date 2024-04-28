@@ -1,5 +1,6 @@
 ﻿using STKDotNetCore.ConsoleApp.AdoDotNetExamples;
 using STKDotNetCore.ConsoleApp.DapperExamples;
+using STKDotNetCore.ConsoleApp.EFCoreExamples;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -42,8 +43,11 @@ AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 //adoDotNetExample.Edit(11);
 //adoDotNetExample.Edit(1);
 
-DapperExample dapper = new DapperExample();
-dapper.Run();
+//DapperExample dapper = new DapperExample();
+//dapper.Run();
+
+EFCoreExample coreExample = new EFCoreExample();
+coreExample.Run();
 
 
 Console.ReadLine();
