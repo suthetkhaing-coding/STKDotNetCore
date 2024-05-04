@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.RestApi", "STKDotNetCore.RestApi\STKDotNetCore.RestApi.csproj", "{258D6E80-293A-4D42-A034-9BB4C06F3D7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.RestApi", "STKDotNetCore.RestApi\STKDotNetCore.RestApi.csproj", "{258D6E80-293A-4D42-A034-9BB4C06F3D7F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.Shared", "STKDotNetCore.Shared\STKDotNetCore.Shared.csproj", "{5A058D0B-EB4B-43D3-B303-80F9DC3C4D03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,12 +28,13 @@ Global
 		{258D6E80-293A-4D42-A034-9BB4C06F3D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{258D6E80-293A-4D42-A034-9BB4C06F3D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{258D6E80-293A-4D42-A034-9BB4C06F3D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A058D0B-EB4B-43D3-B303-80F9DC3C4D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A058D0B-EB4B-43D3-B303-80F9DC3C4D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A058D0B-EB4B-43D3-B303-80F9DC3C4D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A058D0B-EB4B-43D3-B303-80F9DC3C4D03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{E0F876CA-F4EC-49CE-86D0-A015CDBE717F} = {EB7E3D99-07DA-4027-9B3A-E9F4270688C3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02A98412-8D55-4556-95C8-E51B6E0751EB}
