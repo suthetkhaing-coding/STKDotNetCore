@@ -88,7 +88,7 @@ namespace STKDotNetCore.RestApi.Controllers
             }
             int result = _context.SaveChanges();
 
-            string message = result > 0 ? "Updating Successful." : "Updating Failed.";
+            string message = result > 0 ? "Patch Updating Successful." : "Patch Updating Failed.";
             return Ok(message);
         }
         

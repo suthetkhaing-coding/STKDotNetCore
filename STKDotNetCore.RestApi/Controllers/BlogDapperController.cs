@@ -111,7 +111,7 @@ namespace STKDotNetCore.RestApi.Controllers
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
             int result = db.Execute(query, blog);
             
-            string message = result > 0 ? "Updating Successful." : "Updating Failed.";
+            string message = result > 0 ? "Patch Updating Successful." : "Patch Updating Failed.";
             return Ok(message);
         }
 
