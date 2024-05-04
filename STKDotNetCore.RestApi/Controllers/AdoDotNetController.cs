@@ -143,92 +143,155 @@ namespace STKDotNetCore.RestApi.Controllers
             return Ok(message);
         }
 
+        //[HttpPatch("{id}")]
+        //public IActionResult PatchBlog(int id, BlogModel blog)
+        //{
+        //    string query = "select * from Tbl_Blog where BlogId = @BlogId";
+
+        //    SqlConnection connection = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+
+        //    connection.Open();
+
+        //    SqlCommand cmd = new SqlCommand(query, connection);
+        //    cmd.Parameters.AddWithValue("@BlogId", id);
+        //    var count = cmd.ExecuteScalar();
+        //    if (count == null || count == DBNull.Value)
+        //    {
+        //        return NotFound("No data found.");
+        //    }
+
+        //    SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    dataAdapter.Fill(dt);
+
+        //    List<BlogModel> lst = new List<BlogModel>();
+        //    if (dt.Rows.Count == 0)
+        //    {
+        //        var response = new { IsSuccess = false, Message = "No data found." };
+        //        return NotFound(response);
+        //    }
+
+        //    DataRow dr = dt.Rows[0];
+
+        //    BlogModel item = new BlogModel
+        //    {
+        //        BlogId = Convert.ToInt32(dr["BlogId"]),
+        //        BlogTitle = Convert.ToString(dr["BlogTitle"]),
+        //        BlogAuthor = Convert.ToString(dr["BlogAuthor"]),
+        //        BlogContent = Convert.ToString(dr["BlogContent"]),
+        //    };
+        //    lst.Add(item);
+
+        //    string conditions = "";
+        //    List<SqlParameter> parameters = new List<SqlParameter>();
+
+        //    #region Patch Validation Conditions
+
+        //    if (!string.IsNullOrEmpty(blog.BlogTitle))
+        //    {
+        //        conditions += " [BlogTitle] = @BlogTitle, ";
+        //        parameters.Add(new SqlParameter("@BlogTitle", SqlDbType.NVarChar) { Value = blog.BlogTitle });
+        //        item.BlogTitle = blog.BlogTitle;
+        //    }
+
+        //    if (!string.IsNullOrEmpty(blog.BlogAuthor))
+        //    {
+        //        conditions += " [BlogAuthor] = @BlogAuthor, ";
+        //        parameters.Add(new SqlParameter("@BlogAuthor", SqlDbType.NVarChar) { Value = blog.BlogAuthor });
+        //        item.BlogAuthor = blog.BlogAuthor;
+        //    }
+
+        //    if (!string.IsNullOrEmpty(blog.BlogContent))
+        //    {
+        //        conditions += " [BlogContent] = @BlogContent, ";
+        //        parameters.Add(new SqlParameter("@BlogContent", SqlDbType.NVarChar) { Value = blog.BlogContent });
+        //        item.BlogContent = blog.BlogContent;
+        //    }
+
+        //    if (conditions.Length == 0)
+        //    {
+        //        var response = new { IsSuccess = false, Message = "No data to update." };
+        //        return NotFound(response);
+        //    }
+
+        //    #endregion
+
+        //    conditions = conditions.TrimEnd(',', ' ');
+        //    query = $@"UPDATE [dbo].[Tbl_Blog] SET {conditions} WHERE BlogId = @BlogId";
+
+        //    using SqlCommand cmd2 = new SqlCommand(query, connection);
+        //    cmd2.Parameters.AddWithValue("@BlogId", id);
+        //    cmd2.Parameters.AddRange(parameters.ToArray());
+
+        //    int result = cmd2.ExecuteNonQuery();
+        //    connection.Close();
+
+        //    string message = result > 0 ? "Patch Updating Successful." : "Patch Updating Failed.";
+        //    return Ok(message);
+        //}
+
         [HttpPatch("{id}")]
         public IActionResult PatchBlog(int id, BlogModel blog)
         {
-            string query = "select * from Tbl_Blog where BlogId = @BlogId";
-
+            string query = "SELECT * FROM Tbl_Blog WHERE BlogId = @BlogId";
             SqlConnection connection = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
 
             connection.Open();
-            
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@BlogId", id);
-            var count = cmd.ExecuteScalar();
-            if (count == null || count == DBNull.Value)
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDataAdapter.Fill(dt);            
+
+            if (dt.Rows.Count == 0)
             {
                 return NotFound("No data found.");
             }
 
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            dataAdapter.Fill(dt);
-
-            List<BlogModel> lst = new List<BlogModel>();
-            if (dt.Rows.Count == 0)
-            {
-                var response = new { IsSuccess = false, Message = "No data found." };
-                return NotFound(response);
-            }
-
             DataRow dr = dt.Rows[0];
-
             BlogModel item = new BlogModel
             {
                 BlogId = Convert.ToInt32(dr["BlogId"]),
                 BlogTitle = Convert.ToString(dr["BlogTitle"]),
                 BlogAuthor = Convert.ToString(dr["BlogAuthor"]),
-                BlogContent = Convert.ToString(dr["BlogContent"]),
+                BlogContent = Convert.ToString(dr["BlogContent"])
             };
-            lst.Add(item);
-
-            string conditions = "";
-            List<SqlParameter> parameters = new List<SqlParameter>();
-
-            #region Patch Validation Conditions
 
             if (!string.IsNullOrEmpty(blog.BlogTitle))
             {
-                conditions += " [BlogTitle] = @BlogTitle, ";
-                parameters.Add(new SqlParameter("@BlogTitle", SqlDbType.NVarChar) { Value = blog.BlogTitle });
                 item.BlogTitle = blog.BlogTitle;
             }
 
             if (!string.IsNullOrEmpty(blog.BlogAuthor))
             {
-                conditions += " [BlogAuthor] = @BlogAuthor, ";
-                parameters.Add(new SqlParameter("@BlogAuthor", SqlDbType.NVarChar) { Value = blog.BlogAuthor });
                 item.BlogAuthor = blog.BlogAuthor;
             }
 
             if (!string.IsNullOrEmpty(blog.BlogContent))
             {
-                conditions += " [BlogContent] = @BlogContent, ";
-                parameters.Add(new SqlParameter("@BlogContent", SqlDbType.NVarChar) { Value = blog.BlogContent });
                 item.BlogContent = blog.BlogContent;
             }
 
-            if (conditions.Length == 0)
-            {
-                var response = new { IsSuccess = false, Message = "No data to update." };
-                return NotFound(response);
-            }
+            query = @"UPDATE Tbl_Blog
+                           SET BlogTitle = @BlogTitle,
+                               BlogAuthor = @BlogAuthor,
+                               BlogContent = @BlogContent
+                           WHERE BlogId = @BlogId";
 
-            #endregion
-
-            conditions = conditions.TrimEnd(',', ' ');
-            query = $@"UPDATE [dbo].[Tbl_Blog] SET {conditions} WHERE BlogId = @BlogId";
-
-            using SqlCommand cmd2 = new SqlCommand(query, connection);
-            cmd2.Parameters.AddWithValue("@BlogId", id);
-            cmd2.Parameters.AddRange(parameters.ToArray());
-
-            int result = cmd2.ExecuteNonQuery();
+            
+            cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@BlogTitle", item.BlogTitle);
+            cmd.Parameters.AddWithValue("@BlogAuthor", item.BlogAuthor);
+            cmd.Parameters.AddWithValue("@BlogContent", item.BlogContent);
+            cmd.Parameters.AddWithValue("@BlogId", item.BlogId);
+            int result = cmd.ExecuteNonQuery();
             connection.Close();
 
             string message = result > 0 ? "Patch Updating Successful." : "Patch Updating Failed.";
+
             return Ok(message);
         }
+
 
         [HttpDelete("{id}")]
         public IActionResult DeleteBlog(int id)
