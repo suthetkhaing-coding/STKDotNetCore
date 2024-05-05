@@ -29,7 +29,7 @@ namespace STKDotNetCore.Shared
             return lst;
         }
 
-        public T? QueryFirstOrDefault<T>(string query, object? param = null)
+        public T QueryFirstOrDefault<T>(string query, object? param = null)
         {
             using IDbConnection db = new SqlConnection(_connectionString);
             //if (param != null) 
@@ -42,7 +42,7 @@ namespace STKDotNetCore.Shared
             //}
 
             var item = db.Query<T>(query, param).FirstOrDefault();
-            return item;
+            return item!;
         }
 
         public int Execute(string query, object? param = null)

@@ -26,19 +26,21 @@ namespace STKDotNetCore.RestApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetBlog(int id)
         {
-            string query = "select * from tbl_blog where BlogId = @BlogId";
+            //string query = "select * from tbl_blog where BlogId = @BlogId";
 
-            //AdoDotNetParameter[] parameters = new AdoDotNetParameter[1];
-            //parameters[0] = new AdoDotNetParameter("@BlogID", id);
-            //var item = _adoDotNetService.Query<BlogModel>(query, parameters);
+            ////AdoDotNetParameter[] parameters = new AdoDotNetParameter[1];
+            ////parameters[0] = new AdoDotNetParameter("@BlogID", id);
+            ////var item = _adoDotNetService.Query<BlogModel>(query, parameters);
 
-            var item = _adoDotNetService.QueryFirstOrDefault<BlogModel>(query, new AdoDotNetParameter("@BlogID", id));
+            //var item = _adoDotNetService.QueryFirstOrDefault<BlogModel>(query, new AdoDotNetParameter("@BlogID", id));
+
+            var item = FindById(id);
 
             if (item is null)
             {
                 return NotFound("No data found.");
             }
-           
+
             return Ok(item);
         }
 
@@ -53,8 +55,8 @@ namespace STKDotNetCore.RestApi.Controllers
            (@BlogTitle 
            ,@BlogAuthor 
            ,@BlogContent)";
-            
-            int result = _adoDotNetService.Execute(query, 
+
+            int result = _adoDotNetService.Execute(query,
                 new AdoDotNetParameter("@BlogTitle", blog.BlogTitle),
                 new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor),
                 new AdoDotNetParameter("@BlogContent", blog.BlogContent)
@@ -67,11 +69,18 @@ namespace STKDotNetCore.RestApi.Controllers
         [HttpPut("{id}")]
         public IActionResult UpdateBlog(int id, BlogModel blog)
         {
+            var item = FindById(id);
+            if (item is null)
+            {
+                return NotFound("No data found.");
+            }
+
             string query = @"UPDATE [dbo].[Tbl_Blog]
    SET [BlogTitle] = @BlogTitle, 
       [BlogAuthor] = @BlogAuthor,
       [BlogContent] = @BlogContent
  WHERE BlogId= @BlogId";
+
             int result = _adoDotNetService.Execute(query,
                 new AdoDotNetParameter("@BlogID", id),
                 new AdoDotNetParameter("@BlogTitle", blog.BlogTitle),
@@ -87,9 +96,7 @@ namespace STKDotNetCore.RestApi.Controllers
         [HttpPatch("{id}")]
         public IActionResult PatchBlog(int id, BlogModel blog)
         {
-            string query = "select * from Tbl_Blog where BlogId = @BlogId";
-
-            var item = _adoDotNetService.QueryFirstOrDefault<BlogModel>(query, new AdoDotNetParameter("@BlogID", id));
+            var item = FindById(id);
 
             if (item is null)
             {
@@ -111,7 +118,7 @@ namespace STKDotNetCore.RestApi.Controllers
                 item.BlogContent = blog.BlogContent;
             }
 
-            query = @"UPDATE [dbo].[Tbl_Blog]
+            string query = @"UPDATE [dbo].[Tbl_Blog]
                            SET [BlogTitle] = @BlogTitle,
                                [BlogAuthor] = @BlogAuthor,
                                [BlogContent] = @BlogContent
@@ -130,6 +137,13 @@ namespace STKDotNetCore.RestApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteBlog(int id)
         {
+            var item = FindById(id);
+
+            if (item is null)
+            {
+                return NotFound("No data found.");
+            }
+
             string query = @"delete from Tbl_Blog WHERE BlogId= @BlogId";
 
             int result = _adoDotNetService.Execute(query, new AdoDotNetParameter("@BlogID", id));
@@ -137,6 +151,15 @@ namespace STKDotNetCore.RestApi.Controllers
             string message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
 
             return Ok(message);
+        }
+
+        private BlogModel FindById(int id)
+        {
+            string query = "select * from Tbl_Blog where BlogId = @BlogId";
+
+            var item = _adoDotNetService.QueryFirstOrDefault<BlogModel>(query, new AdoDotNetParameter("@BlogID", id));
+
+            return item!;
         }
 
     }

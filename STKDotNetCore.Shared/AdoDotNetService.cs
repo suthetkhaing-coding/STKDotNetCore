@@ -49,7 +49,7 @@ namespace STKDotNetCore.Shared
             return lst;
         }
 
-        public T? QueryFirstOrDefault<T>(string query, params AdoDotNetParameter[]? parameters)
+        public T QueryFirstOrDefault<T>(string query, params AdoDotNetParameter[]? parameters)
         {
             SqlConnection connection = new SqlConnection(_connectionString);
 
@@ -79,7 +79,7 @@ namespace STKDotNetCore.Shared
             List<T> lst = JsonConvert.DeserializeObject<List<T>>(json)!;// json to C#
             if (lst.Count == 0)
             {
-                return default; 
+                return default!; 
             }
             return lst[0];
         }
