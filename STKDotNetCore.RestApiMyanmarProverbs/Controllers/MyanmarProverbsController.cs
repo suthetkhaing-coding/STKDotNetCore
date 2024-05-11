@@ -35,9 +35,9 @@ namespace STKDotNetCore.RestApiMyanmarProverbs.Controllers
             var model = await GetDataAsync();
             var proverb = model.Tbl_MMProverbs.FirstOrDefault(x => x.TitleId == titleId && x.ProverbId == proverbId);
 
-            if (proverb == null)
+            if (proverb is null)
             {
-                return NotFound();
+                return NotFound("No proverb found.");
             }
 
             return Ok(proverb);

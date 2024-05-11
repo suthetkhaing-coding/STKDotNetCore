@@ -29,7 +29,7 @@ namespace STKDotNetCore.RestApiWithNLayer.Controllers
             var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item is null)
             {
-                return Ok("No data found.");
+                return NotFound("No data found.");
             }
 
             return Ok(item);
