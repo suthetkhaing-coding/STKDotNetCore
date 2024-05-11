@@ -309,7 +309,6 @@ namespace STKDotNetCore.RestApiWithNLayer.Controllers
 
             return Ok(message);
         }
-
     }
 }
 

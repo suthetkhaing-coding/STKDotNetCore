@@ -64,5 +64,4 @@ namespace STKDotNetCore.RestApiMyanmarProverbs.Controllers
         public string ProverbName { get; set; }
         public string ProverbDesp { get; set; }
     }
-
 }

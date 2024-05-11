@@ -135,6 +135,5 @@ namespace STKDotNetCore.RestApiWithNLayer.Controllers
             var item = _dapperService.QueryFirstOrDefault<BlogModel>(query, new BlogModel { BlogId = id });
             return item;
         }
-
     }
 }

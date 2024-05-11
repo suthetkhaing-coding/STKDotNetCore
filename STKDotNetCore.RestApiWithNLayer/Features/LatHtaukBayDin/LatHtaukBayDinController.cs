@@ -58,5 +58,4 @@ namespace STKDotNetCore.RestApiWithNLayer.Features.LatHtaukBayDin
         public int answerNo { get; set; }
         public string answerResult { get; set; }
     }
-
 }

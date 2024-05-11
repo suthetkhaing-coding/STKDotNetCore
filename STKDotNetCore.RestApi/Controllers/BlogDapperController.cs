@@ -138,6 +138,5 @@ namespace STKDotNetCore.RestApiWithNLayer.Controllers
             var item = db.Query<BlogModel>(query, new BlogModel { BlogId = id }).FirstOrDefault();
             return item;
         }
-
     }
 }

@@ -106,7 +106,6 @@ namespace STKDotNetCore.RestApiWithNLayer.Controllers
 
             string message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
             return Ok(message);
-        }
-        
+        }        
     }
 }

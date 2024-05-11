@@ -49,7 +49,6 @@ AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 EFCoreExample coreExample = new EFCoreExample();
 coreExample.Run();
 
-
 Console.ReadLine();
 
 
