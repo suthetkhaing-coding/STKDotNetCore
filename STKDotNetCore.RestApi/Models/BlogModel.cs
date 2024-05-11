@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace STKDotNetCore.RestApi.Models;
+namespace STKDotNetCore.RestApiWithNLayer.Models;
 [Table("Tbl_Blog")]
 public class BlogModel
 {

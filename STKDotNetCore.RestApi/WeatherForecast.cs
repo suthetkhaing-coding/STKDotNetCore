@@ -1,4 +1,4 @@
-namespace STKDotNetCore.RestApi
+namespace STKDotNetCore.RestApiWithNLayer
 {
     public class WeatherForecast
     {

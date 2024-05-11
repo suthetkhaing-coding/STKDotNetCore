@@ -1,13 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using STKDotNetCore.RestApiWithNLayer;
-using STKDotNetCore.RestApiWithNLayer.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace STKDotNetCore.ConsoleApp.EFCoreExamples
+﻿namespace STKDotNetCore.RestApiWithNLayer.Db
 {
     internal class AppDbContext : DbContext
     {

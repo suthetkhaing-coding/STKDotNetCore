@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using STKDotNetCore.RestApi.Models;
+using STKDotNetCore.RestApiWithNLayer.Models;
 using System.Data;
 using System.Data.SqlClient;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using STKDotNetCore.Shared;
 using System.Reflection.Metadata;
 
-namespace STKDotNetCore.RestApi.Controllers
+namespace STKDotNetCore.RestApiWithNLayer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
