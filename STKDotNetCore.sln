@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.RestApi", "ST
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.Shared", "STKDotNetCore.Shared\STKDotNetCore.Shared.csproj", "{5A058D0B-EB4B-43D3-B303-80F9DC3C4D03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.RestApiWithNLayer", "STKDotNetCore.RestApiWithNLayer\STKDotNetCore.RestApiWithNLayer.csproj", "{33081966-14EC-4F6A-A928-36345B7604BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.RestApiWithNLayer", "STKDotNetCore.RestApiWithNLayer\STKDotNetCore.RestApiWithNLayer.csproj", "{33081966-14EC-4F6A-A928-36345B7604BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.ConsoleAppHttpClient", "STKDotNetCore.ConsoleAppHttpClient\STKDotNetCore.ConsoleAppHttpClient.csproj", "{03B971A6-3B17-4B0E-A5D8-B08CF5500AB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{33081966-14EC-4F6A-A928-36345B7604BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33081966-14EC-4F6A-A928-36345B7604BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33081966-14EC-4F6A-A928-36345B7604BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03B971A6-3B17-4B0E-A5D8-B08CF5500AB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03B971A6-3B17-4B0E-A5D8-B08CF5500AB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03B971A6-3B17-4B0E-A5D8-B08CF5500AB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03B971A6-3B17-4B0E-A5D8-B08CF5500AB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
