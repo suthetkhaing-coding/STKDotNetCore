@@ -22,11 +22,17 @@ namespace STKDotNetCore.RestApiMyanmarProverbs.Controllers
             return Ok(model.Tbl_MMProverbsTitle);
         }
 
-        [HttpGet("proverbs")]
-        public async Task<IActionResult> Proverbs()
+        [HttpGet("{titleName}")]
+        public async Task<IActionResult> Proverbs(string titleName)
         {
             var model = await GetDataAsync();
-            return Ok(model.Tbl_MMProverbs);
+            var item = model.Tbl_MMProverbsTitle.FirstOrDefault(x => x.TitleName == titleName);
+            if (item is null)
+                return NotFound("No title name found.");
+
+            var titleId = item.TitleId;
+            var lst = model.Tbl_MMProverbs.Where(x => x.TitleId == titleId).ToList();
+            return Ok(lst);
         }
 
         [HttpGet("{titleId}/{proverbId}")]

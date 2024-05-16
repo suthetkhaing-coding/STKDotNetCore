@@ -16,13 +16,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.Shared", "STK
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.RestApiWithNLayer", "STKDotNetCore.RestApiWithNLayer\STKDotNetCore.RestApiWithNLayer.csproj", "{33081966-14EC-4F6A-A928-36345B7604BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.ConsoleAppHttpClient", "STKDotNetCore.ConsoleAppHttpClient\STKDotNetCore.ConsoleAppHttpClient.csproj", "{03B971A6-3B17-4B0E-A5D8-B08CF5500AB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.ConsoleAppHttpClient", "STKDotNetCore.ConsoleAppHttpClient\STKDotNetCore.ConsoleAppHttpClient.csproj", "{03B971A6-3B17-4B0E-A5D8-B08CF5500AB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.RestApiMyanmarProverbs", "STKDotNetCore.RestApiMyanmarProverbs\STKDotNetCore.RestApiMyanmarProverbs.csproj", "{EEA56C89-2700-4C1A-A934-09FC605FD948}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.RestApiMyanmarProverbs", "STKDotNetCore.RestApiMyanmarProverbs\STKDotNetCore.RestApiMyanmarProverbs.csproj", "{EEA56C89-2700-4C1A-A934-09FC605FD948}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.ConsoleAppHttpClientExamples", "STKDotNetCore.ConsoleAppHttpClientExamples\STKDotNetCore.ConsoleAppHttpClientExamples.csproj", "{BF96C8EF-6615-4273-A6E5-4303044C45F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.ConsoleAppHttpClientExamples", "STKDotNetCore.ConsoleAppHttpClientExamples\STKDotNetCore.ConsoleAppHttpClientExamples.csproj", "{BF96C8EF-6615-4273-A6E5-4303044C45F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.ConsoleAppRestClientExamples", "STKDotNetCore.ConsoleAppRestClientExamples\STKDotNetCore.ConsoleAppRestClientExamples.csproj", "{E3427945-E379-4B82-8CE7-62003EC90646}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.ConsoleAppRestClientExamples", "STKDotNetCore.ConsoleAppRestClientExamples\STKDotNetCore.ConsoleAppRestClientExamples.csproj", "{E3427945-E379-4B82-8CE7-62003EC90646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.PizzaApi", "STKDotNetCore.PizzaApi\STKDotNetCore.PizzaApi.csproj", "{7DDED677-C731-4209-890E-4E09CA462EFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{E3427945-E379-4B82-8CE7-62003EC90646}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3427945-E379-4B82-8CE7-62003EC90646}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3427945-E379-4B82-8CE7-62003EC90646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DDED677-C731-4209-890E-4E09CA462EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DDED677-C731-4209-890E-4E09CA462EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DDED677-C731-4209-890E-4E09CA462EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DDED677-C731-4209-890E-4E09CA462EFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
