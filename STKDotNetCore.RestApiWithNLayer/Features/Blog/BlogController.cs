@@ -24,7 +24,7 @@
             var item = _blBlog.GetBlog(id);
             if (item is null)
             {
-                return Ok("No data found.");
+                return NotFound("No data found.");
             }
 
             return Ok(item);
@@ -45,7 +45,7 @@
             var item = _blBlog.GetBlog(id);
             if (item is null)
             {
-                return Ok("No data found.");
+                return NotFound("No data found.");
             }
 
             var result = _blBlog.UpdateBlog(id, blog);
@@ -60,7 +60,7 @@
             var item = _blBlog.GetBlog(id);
             if (item is null)
             {
-                return Ok("No data found.");
+                return NotFound("No data found.");
             }
 
             var result = _blBlog.PatchBlog(id, blog);
@@ -75,7 +75,7 @@
             var item = _blBlog.GetBlog(id);
             if (item is null)
             {
-                return Ok("No data found.");
+                return NotFound("No data found.");
             }
 
             var result = _blBlog.DeleteBlog(id);
