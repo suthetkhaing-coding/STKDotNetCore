@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using STKDotNetCore.PizzaApi.Db;
+using STKDotNetCore.PizzaApi.Queries;
+using STKDotNetCore.Shared;
 using System.Xml.Schema;
 using static STKDotNetCore.PizzaApi.Db.AppDbContext;
 
@@ -12,9 +14,11 @@ namespace STKDotNetCore.PizzaApi.Features.Pizza
     public class PizzaController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
+        private readonly DapperService _dapperService;
         public PizzaController()
         {
             _appDbContext = new AppDbContext();
+            _dapperService = new DapperService(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         }
 
         [HttpGet]
@@ -31,24 +35,48 @@ namespace STKDotNetCore.PizzaApi.Features.Pizza
             return Ok(lst);
         }
 
+        //[HttpGet("Order/{invoiceNo}")]
+        //public async Task<IActionResult> GetOrderAsync(string invoiceNo)
+        //{
+        //    var item = await _appDbContext.PizzaOrders.FirstOrDefaultAsync(x=> x.PizzaOrderInvoiceNo == invoiceNo);
+        //    var lst = await _appDbContext.PizzaOrderDetails.Where(x=> x.PizzaOrderInvoiceNo == invoiceNo).ToListAsync();
+
+        //    //return Ok(new
+        //    //{
+        //    //    Order = item,
+        //    //    OrderDetail = lst
+        //    //});
+
+        //    CombineModel combineModel = new CombineModel()
+        //    {
+        //        Order = item,
+        //        Details = lst
+        //    };
+        //    return Ok(combineModel);
+        //}
+
         [HttpGet("Order/{invoiceNo}")]
-        public async Task<IActionResult> GetOrderAsync(string invoiceNo)
+        public IActionResult GetOrder(string invoiceNo)
         {
-            var item = await _appDbContext.PizzaOrders.FirstOrDefaultAsync(x=> x.PizzaOrderInvoiceNo == invoiceNo);
-            var lst = await _appDbContext.PizzaOrderDetails.Where(x=> x.PizzaOrderInvoiceNo == invoiceNo).ToListAsync();
+            var item = _dapperService.QueryFirstOrDefault<PizzaOrderInvoiceHeadModel>
+                (
+                PizzaQuery.PizzaOrderQuery,
+                new { PizzaOrderInvoiceNo = invoiceNo }
+                );
 
-            //return Ok(new
-            //{
-            //    Order = item,
-            //    OrderDetail = lst
-            //});
+            var lst = _dapperService.Query<PizzaOrderInvoiceDetailModel>
+                (
+                PizzaQuery.PizzaOrderDetailQuery,
+                new { PizzaOrderInvoiceNo = invoiceNo }
+                );
 
-            CombineModel combineModel = new CombineModel()
+            var model = new PizzaOrderInvoiceResponse()
             {
                 Order = item,
                 Details = lst
             };
-            return Ok(combineModel);
+
+            return Ok(model);
         }
 
         [HttpPost("Order")]
@@ -89,8 +117,8 @@ namespace STKDotNetCore.PizzaApi.Features.Pizza
             OrderResponse response = new OrderResponse()
             {
                 InvoiceNo = invoiceNo,
-                Message ="Thank you for your order! Enjoy your pizza!",
-                TotalAmount= total
+                Message = "Thank you for your order! Enjoy your pizza!",
+                TotalAmount = total
             };
 
             return Ok(response);
