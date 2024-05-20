@@ -45,11 +45,12 @@ namespace STKDotNetCore.WinFormsApp
             btnSave.BackColor = Color.FromArgb(67, 160, 71);
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(373, 366);
+            btnSave.Location = new Point(378, 366);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(123, 50);
             btnSave.TabIndex = 0;
-            btnSave.Text = "Save";
+            btnSave.TabStop = false;
+            btnSave.Text = "&Save";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
@@ -65,7 +66,7 @@ namespace STKDotNetCore.WinFormsApp
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(232, 117);
+            label2.Location = new Point(232, 123);
             label2.Name = "label2";
             label2.Size = new Size(82, 28);
             label2.TabIndex = 2;
@@ -74,7 +75,7 @@ namespace STKDotNetCore.WinFormsApp
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(232, 197);
+            label3.Location = new Point(232, 206);
             label3.Name = "label3";
             label3.Size = new Size(91, 28);
             label3.TabIndex = 3;
@@ -89,14 +90,14 @@ namespace STKDotNetCore.WinFormsApp
             // 
             // txtAuthor
             // 
-            txtAuthor.Location = new Point(227, 154);
+            txtAuthor.Location = new Point(232, 160);
             txtAuthor.Name = "txtAuthor";
             txtAuthor.Size = new Size(377, 34);
             txtAuthor.TabIndex = 5;
             // 
             // txtContent
             // 
-            txtContent.Location = new Point(227, 237);
+            txtContent.Location = new Point(232, 237);
             txtContent.Multiline = true;
             txtContent.Name = "txtContent";
             txtContent.Size = new Size(377, 112);
@@ -107,11 +108,11 @@ namespace STKDotNetCore.WinFormsApp
             btnCancel.BackColor = Color.FromArgb(84, 110, 122);
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(227, 366);
+            btnCancel.Location = new Point(232, 366);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(123, 50);
             btnCancel.TabIndex = 7;
-            btnCancel.Text = "Cancel";
+            btnCancel.Text = "&Cancel";
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
