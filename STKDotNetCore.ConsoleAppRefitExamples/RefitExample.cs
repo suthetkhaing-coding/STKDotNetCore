@@ -9,7 +9,7 @@ namespace STKDotNetCore.ConsoleAppRefitExamples
 {
     public class RefitExample
     {
-        private readonly IBlogApi service = RestService.For<IBlogApi>("https://localhost:7120");
+        private readonly IBlogApi _service = RestService.For<IBlogApi>("https://localhost:7120");
 
         public async Task RunAsync()
         {
@@ -23,7 +23,7 @@ namespace STKDotNetCore.ConsoleAppRefitExamples
 
         private async Task ReadAsync()
         {
-            var lst = await service.GetBlogs();
+            var lst = await _service.GetBlogs();
             foreach (var item in lst)
             {
                 Console.WriteLine($"Id => {item.BlogId}");
@@ -38,7 +38,7 @@ namespace STKDotNetCore.ConsoleAppRefitExamples
         {
             try
             {
-                var item = await service.GetBlog(id);
+                var item = await _service.GetBlog(id);
                 Console.WriteLine($"Id => {item.BlogId}");
                 Console.WriteLine($"Title => {item.BlogTitle}");
                 Console.WriteLine($"Author => {item.BlogAuthor}");
@@ -66,7 +66,7 @@ namespace STKDotNetCore.ConsoleAppRefitExamples
                     BlogAuthor = author,
                     BlogContent = content
                 };
-                var message = await service.CreateBlog(blog);
+                var message = await _service.CreateBlog(blog);
                 Console.WriteLine(message);
             }
             catch (ApiException ex)
@@ -90,7 +90,7 @@ namespace STKDotNetCore.ConsoleAppRefitExamples
                     BlogAuthor = author,
                     BlogContent = content
                 };
-                var message = await service.UpdateBlog(id, blog);
+                var message = await _service.UpdateBlog(id, blog);
                 Console.WriteLine(message);
             }
             catch (ApiException ex)
@@ -108,7 +108,7 @@ namespace STKDotNetCore.ConsoleAppRefitExamples
         {
             try
             {
-                var message = await service.DeleteBlog(id);
+                var message = await _service.DeleteBlog(id);
                 Console.WriteLine(message);
             }
             catch (ApiException ex)
