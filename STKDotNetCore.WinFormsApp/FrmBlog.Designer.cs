@@ -38,6 +38,7 @@ namespace STKDotNetCore.WinFormsApp
             txtAuthor = new TextBox();
             txtContent = new TextBox();
             btnCancel = new Button();
+            btnUpdate = new Button();
             SuspendLayout();
             // 
             // btnSave
@@ -116,11 +117,27 @@ namespace STKDotNetCore.WinFormsApp
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.FromArgb(128, 128, 255);
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(378, 366);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(123, 50);
+            btnUpdate.TabIndex = 8;
+            btnUpdate.TabStop = false;
+            btnUpdate.Text = "&Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Visible = false;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
             // FrmBlog
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(880, 504);
+            Controls.Add(btnUpdate);
             Controls.Add(btnCancel);
             Controls.Add(txtContent);
             Controls.Add(txtAuthor);
@@ -148,5 +165,6 @@ namespace STKDotNetCore.WinFormsApp
         private TextBox txtAuthor;
         private TextBox txtContent;
         private Button btnCancel;
+        private Button btnUpdate;
     }
 }

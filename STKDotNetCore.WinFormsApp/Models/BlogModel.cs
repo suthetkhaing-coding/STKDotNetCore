@@ -1,4 +1,4 @@
-﻿namespace STKDotNetCore.WinFormsApp;
+﻿namespace STKDotNetCore.WinFormsApp.Models;
 
 public class BlogModel
 {
