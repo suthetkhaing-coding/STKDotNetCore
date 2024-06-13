@@ -88,10 +88,16 @@ function updateBlog(id, title, author, content) {
 }
 
 function deleteBlog(id) {
-    let result = confirm('Are you sure want to delete?');
-    if (!result) return;
+    // let result = confirm('Are you sure want to delete?');
+    // if (!result) return;
 
-    let lst = getBlogs();
+    Notiflix.Confirm.show(
+        'Confirm',
+        'Are you sure want to delete?',
+        'Yes',
+        'No',
+        function okCb() {
+            let lst = getBlogs();
 
     var items = lst.filter(x => x.id === id);
     if (items.lenth == 0) {
@@ -106,6 +112,18 @@ function deleteBlog(id) {
 
     successMessage('Deleting Successful.');
     getBlogTable();
+        },
+        function cancelCb() {
+            return;
+        },
+        {
+            width: '320px',
+            borderRadius: '8px',
+            // etc...
+        },
+    );
+
+    
 }
 
 function getBlogs() {
@@ -143,11 +161,21 @@ $('#btnSave').click(function () {
 });
 
 function successMessage(message) {
-    alert(message);
+    //alert(message);
+    Swal.fire({
+        title: "Success!",
+        text: message,
+        icon: "success"
+    });
 }
 
 function errorMessage(message) {
-    alert(message);
+    //alert(message);
+    Swal.fire({
+        title: "Error!",
+        text: message,
+        icon: "error"
+    });
 }
 
 function clearControls() {
