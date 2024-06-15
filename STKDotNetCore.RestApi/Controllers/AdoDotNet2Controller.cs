@@ -13,7 +13,15 @@ namespace STKDotNetCore.RestApiWithNLayer.Controllers
     [ApiController]
     public class AdoDotNet2Controller : ControllerBase
     {
-        private readonly AdoDotNetService _adoDotNetService = new AdoDotNetService(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+        //private readonly AdoDotNetService _adoDotNetService = new AdoDotNetService(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+
+        private readonly AdoDotNetService _adoDotNetService;
+
+        public AdoDotNet2Controller(AdoDotNetService adoDotNetService)
+        {
+            _adoDotNetService = adoDotNetService;
+        }
+
         [HttpGet]
         public IActionResult GetBlogs()
         {

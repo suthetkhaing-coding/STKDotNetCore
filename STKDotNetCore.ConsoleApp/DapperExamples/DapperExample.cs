@@ -11,8 +11,15 @@ using System.Threading.Tasks;
 
 namespace STKDotNetCore.ConsoleApp.DapperExamples
 {
-    internal class DapperExample
+    public class DapperExample
     {
+        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder;
+
+        public DapperExample(SqlConnectionStringBuilder sqlConnectionStringBuilder)
+        {
+            _sqlConnectionStringBuilder = sqlConnectionStringBuilder;
+        }
+
         public void Run()
         {
             //Read();
@@ -25,7 +32,7 @@ namespace STKDotNetCore.ConsoleApp.DapperExamples
 
         private void Read()
         {
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            using IDbConnection db = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             List<BlogDto> lst = db.Query<BlogDto>("select * from tbl_blog").ToList();
 
             foreach (BlogDto item in lst)
@@ -40,7 +47,7 @@ namespace STKDotNetCore.ConsoleApp.DapperExamples
 
         private void Edit(int id)
         {
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            using IDbConnection db = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             var item = db.Query<BlogDto>("select * from tbl_blog where blogid = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
             if (item is null)
             {
@@ -69,7 +76,7 @@ namespace STKDotNetCore.ConsoleApp.DapperExamples
            (@BlogTitle 
            ,@BlogAuthor 
            ,@BlogContent)";
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            using IDbConnection db = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             int result = db.Execute(query, item);
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             Console.WriteLine(message);
@@ -89,7 +96,7 @@ namespace STKDotNetCore.ConsoleApp.DapperExamples
       [BlogAuthor] = @BlogAuthor,
       [BlogContent] = @BlogContent
  WHERE BlogId= @BlogId";
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            using IDbConnection db = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             int result = db.Execute(query, item);
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";
             Console.WriteLine(message);
@@ -102,10 +109,10 @@ namespace STKDotNetCore.ConsoleApp.DapperExamples
                 BlogId = id
             };
             string query = @"delete from Tbl_Blog WHERE BlogId= @BlogId";
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            using IDbConnection db = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             int result = db.Execute(query, item);
             string message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
             Console.WriteLine(message);
         }
-    }    
+    }
 }

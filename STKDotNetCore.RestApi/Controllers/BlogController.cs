@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using STKDotNetCore.ConsoleApp.EFCoreExamples;
+using STKDotNetCore.RestApi.Db;
 using STKDotNetCore.RestApiWithNLayer.Models;
 
 namespace STKDotNetCore.RestApiWithNLayer.Controllers
@@ -10,10 +10,17 @@ namespace STKDotNetCore.RestApiWithNLayer.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
+        //private readonly AppDbContext _context;
+        //public BlogController()
+        //{
+        //    _context = new AppDbContext();
+        //}
+
         private readonly AppDbContext _context;
-        public BlogController()
+
+        public BlogController(AppDbContext context)
         {
-            _context = new AppDbContext();
+            _context = context;
         }
 
         [HttpGet] 

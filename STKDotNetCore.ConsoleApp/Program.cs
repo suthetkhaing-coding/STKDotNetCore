@@ -1,6 +1,9 @@
-﻿using STKDotNetCore.ConsoleApp.AdoDotNetExamples;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using STKDotNetCore.ConsoleApp.AdoDotNetExamples;
 using STKDotNetCore.ConsoleApp.DapperExamples;
 using STKDotNetCore.ConsoleApp.EFCoreExamples;
+using STKDotNetCore.ConsoleApp.Services;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -35,7 +38,7 @@ Console.WriteLine("Hello, World!");
 //    Console.WriteLine("--------------------------------------");
 //}
 
-AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+//AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 //adoDotNetExample.Read();
 //adoDotNetExample.Create("title", "author", "content");
 //adoDotNetExample.Update(11, "test title", "test author", "test content");
@@ -46,8 +49,31 @@ AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 //DapperExample dapper = new DapperExample();
 //dapper.Run();
 
-EFCoreExample coreExample = new EFCoreExample();
-coreExample.Run();
+//EFCoreExample coreExample = new EFCoreExample();
+//coreExample.Run();
+
+var connectionString = ConnectionStrings.SqlConnectionStringBuilder.ConnectionString;
+var sqlConnectionStringBuilder = new SqlConnectionStringBuilder(connectionString);
+var serviceProvider = new ServiceCollection()
+    .AddScoped(n => new AdoDotNetExample(sqlConnectionStringBuilder))
+    .AddScoped(n => new DapperExample(sqlConnectionStringBuilder))
+    .AddDbContext<AppDbContext>(opt =>
+    {
+        opt.UseSqlServer(connectionString);
+    })
+    .AddScoped<EFCoreExample>()
+    .BuildServiceProvider();
+
+//AppDbContext db = serviceProvider.GetRequiredService<AppDbContext>();
+
+//var adoDotNetExample = serviceProvider.GetRequiredService<AdoDotNetExample>();
+//adoDotNetExample.Read();
+
+//var dapperExample = serviceProvider.GetRequiredService<DapperExample>();
+//dapperExample.Run();
+
+var efCoreExample = serviceProvider.GetRequiredService<EFCoreExample>();
+efCoreExample.Run();
 
 Console.ReadLine();
 

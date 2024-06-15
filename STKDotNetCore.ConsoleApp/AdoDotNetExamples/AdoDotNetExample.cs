@@ -8,15 +8,23 @@ using System.Threading.Tasks;
 
 namespace STKDotNetCore.ConsoleApp.AdoDotNetExamples
 {
-    internal class AdoDotNetExample
+    public class AdoDotNetExample
     {
-        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+        //private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+        //{
+        //    DataSource = "HO-1-091\\MSSQLSERVERS",
+        //    InitialCatalog = "STKDotNetCoreDb",
+        //    UserID = "sa",
+        //    Password = "Ami123!@#"
+        //};
+
+        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder;
+
+        public AdoDotNetExample(SqlConnectionStringBuilder sqlConnectionStringBuilder)
         {
-            DataSource = "HO-1-091\\MSSQLSERVERS",
-            InitialCatalog = "STKDotNetCoreDb",
-            UserID = "sa",
-            Password = "Ami123!@#"
-        };
+            _sqlConnectionStringBuilder = sqlConnectionStringBuilder;
+        }
+
         public void Read()
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
