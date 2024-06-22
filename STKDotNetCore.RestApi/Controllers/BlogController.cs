@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using STKDotNetCore.RestApi.Db;
+using STKDotNetCore.MvcApp.Db;
 using STKDotNetCore.RestApiWithNLayer.Models;
 
 namespace STKDotNetCore.RestApiWithNLayer.Controllers

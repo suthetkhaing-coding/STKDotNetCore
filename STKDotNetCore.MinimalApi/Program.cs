@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using STKDotNetCore.MinimalApi.Db;
-using STKDotNetCore.MinimalApi.Features.Blog;
-using STKDotNetCore.MinimalApi.Models;
+using STKDotNetCore.MvcApp.Db;
+using STKDotNetCore.MvcApp.Features.Blog;
+using STKDotNetCore.MvcApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

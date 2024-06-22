@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace STKDotNetCore.RestApi.Db
+namespace STKDotNetCore.MvcApp.Db
 {
     public class AppDbContext : DbContext
     {

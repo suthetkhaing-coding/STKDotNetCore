@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\STKDotNetCore.NLayer.BusinessLogic\STKDotNetCore.NLayer.BusinessLogic.csproj" />
+    <ProjectReference Include="..\STKDotNetCore.NLayer.DataAccess\STKDotNetCore.NLayer.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using STKDotNetCore.RestApi.Db;
+using STKDotNetCore.MvcApp.Db;
 using STKDotNetCore.Shared;
 
 var builder = WebApplication.CreateBuilder(args);

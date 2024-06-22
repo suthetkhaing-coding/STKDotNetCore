@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using STKDotNetCore.MinimalApi.Db;
-using STKDotNetCore.MinimalApi.Models;
+using STKDotNetCore.MvcApp.Db;
+using STKDotNetCore.MvcApp.Models;
 
-namespace STKDotNetCore.MinimalApi.Features.Blog
+namespace STKDotNetCore.MvcApp.Features.Blog
 {
     public static class BlogService
     {
