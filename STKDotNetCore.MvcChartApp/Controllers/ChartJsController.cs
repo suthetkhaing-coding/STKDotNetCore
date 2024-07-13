@@ -18,5 +18,10 @@ namespace STKDotNetCore.MvcChartApp.Controllers
         {
             return View();
         }
+
+        public IActionResult HorizontalBarChart()
+        {
+            return View();
+        }
     }
 }
