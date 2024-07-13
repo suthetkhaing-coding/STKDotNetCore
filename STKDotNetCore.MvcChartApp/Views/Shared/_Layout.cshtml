@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - STKDotNetCore.MvcChartApp</title>
-     @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/STKDotNetCore.MvcChartApp.styles.css" asp-append-version="true" />
 
@@ -29,6 +29,44 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Apex Chart
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="ApexChart/SimplePieChart">Simple Pie Chart</a></li>
+                                <li><a class="dropdown-item" href="MixedLineColumnChart">MixedLine Column Chart</a></li>
+                                <li><a class="dropdown-item" href="GroupedBar">Grouped Bar Chart</a></li>
+                                <li><a class="dropdown-item" href="MultiSeriesTimelineChart">MultiSeries Timeline Chart</a></li>
+                                <li><a class="dropdown-item" href="StesplineChart">Stespline Chart</a></li>
+                                <li><a class="dropdown-item" href="BasicColumnChart">Basic Column Chart</a></li>
+                                <li><a class="dropdown-item" href="ColumnChartWithDataLables">ColumnChart With DataLables</a></li>
+                                <li><a class="dropdown-item" href="BasicSlopeChart">Basic Slope Chart</a></li>
+                                <li><a class="dropdown-item" href="LineColumnArea">Line ColumnArea Chart</a></li>
+                                <li><a class="dropdown-item" href="BasicLineChart">BasicLine Chart</a></li>
+                                <li><a class="dropdown-item" href="LineWithDataLabelsChart">LineWithDataLabels Chart</a></li>
+                                <li><a class="dropdown-item" href="PyramidChart">Pyramid Chart</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Chart Js
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="ChartJs/ExampleChart">Example Chart</a></li>
+                                <li><a class="dropdown-item" href="InterpolationLineChart">InterpolationLine Chart</a></li>
+                                <li><a class="dropdown-item" href="LineChart">Line Chart</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                High Chart
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="HighCharts/PieChart">Pie Chart</a></li>
+                                <li><a class="dropdown-item" href="OrganizationChart">Organization Chart</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -51,7 +89,14 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script src="https://code.highcharts.com/modules/sankey.js"></script>
+    <script src="https://code.highcharts.com/modules/organization.js"></script>
 
     @await RenderSectionAsync("scripts", required: false)
 </body>
