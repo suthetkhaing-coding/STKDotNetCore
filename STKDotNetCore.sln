@@ -46,6 +46,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.MvcApp2", "ST
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.MvcChartApp", "STKDotNetCore.MvcChartApp\STKDotNetCore.MvcChartApp.csproj", "{582638F1-1F57-4812-B7D1-B25684669EF2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.ConsoleAppLogging", "STKDotNetCore.ConsoleAppLogging\STKDotNetCore.ConsoleAppLogging.csproj", "{4A5D7665-8060-4C12-8EBA-02F7F2D6FB1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -128,6 +130,10 @@ Global
 		{582638F1-1F57-4812-B7D1-B25684669EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{582638F1-1F57-4812-B7D1-B25684669EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{582638F1-1F57-4812-B7D1-B25684669EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A5D7665-8060-4C12-8EBA-02F7F2D6FB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5D7665-8060-4C12-8EBA-02F7F2D6FB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5D7665-8060-4C12-8EBA-02F7F2D6FB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5D7665-8060-4C12-8EBA-02F7F2D6FB1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

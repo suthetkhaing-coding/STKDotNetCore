@@ -1,27 +1,52 @@
-var builder = WebApplication.CreateBuilder(args);
+using Serilog;
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
+string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logs/STKDotNetCore.MvcChartApp.log");
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.File(filePath, rollingInterval: RollingInterval.Hour)
+            .CreateLogger();
+
+try
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    Log.Information("Starting web application");
+
+    var builder = WebApplication.CreateBuilder(args);
+    builder.Services.AddSerilog(); // <-- Add this line
+
+    // Add services to the container.
+    builder.Services.AddControllersWithViews();
+
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseExceptionHandler("/Home/Error");
+        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+        app.UseHsts();
+    }
+
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
+
+    app.UseRouting();
+
+    app.UseAuthorization();
+
+    app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    app.Run();
 }
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.Run();
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Application terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
