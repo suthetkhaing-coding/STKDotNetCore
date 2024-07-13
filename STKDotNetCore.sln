@@ -42,7 +42,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.MinimalApi", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.MvcApp", "STKDotNetCore.MvcApp\STKDotNetCore.MvcApp.csproj", "{C9EE8106-5BAD-4766-A2F3-4C970CF45A84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.MvcApp2", "STKDotNetCore.MvcApp2\STKDotNetCore.MvcApp2.csproj", "{4DC322E8-A9BF-4FB8-8095-A98A578FE7D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.MvcApp2", "STKDotNetCore.MvcApp2\STKDotNetCore.MvcApp2.csproj", "{4DC322E8-A9BF-4FB8-8095-A98A578FE7D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.MvcChartApp", "STKDotNetCore.MvcChartApp\STKDotNetCore.MvcChartApp.csproj", "{582638F1-1F57-4812-B7D1-B25684669EF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -122,6 +124,10 @@ Global
 		{4DC322E8-A9BF-4FB8-8095-A98A578FE7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DC322E8-A9BF-4FB8-8095-A98A578FE7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DC322E8-A9BF-4FB8-8095-A98A578FE7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{582638F1-1F57-4812-B7D1-B25684669EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{582638F1-1F57-4812-B7D1-B25684669EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{582638F1-1F57-4812-B7D1-B25684669EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{582638F1-1F57-4812-B7D1-B25684669EF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
