@@ -2,27 +2,30 @@
     <canvas id="myChart"></canvas>
 </div>
 
-@section scripts{
-<script>
-    const ctx = document.getElementById('myChart');
+@section scripts {
+    <script>
+        const _labels = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+        const _data = [12, 19, 3, 5, 2, 3];
 
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: _labels,
+                datasets: [{
+                    label: '# of Votes',
+                    data: _data,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
-</script>
+        });
+    </script>
 }

@@ -44,11 +44,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.MvcApp", "STK
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.MvcApp2", "STKDotNetCore.MvcApp2\STKDotNetCore.MvcApp2.csproj", "{4DC322E8-A9BF-4FB8-8095-A98A578FE7D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.MvcChartApp", "STKDotNetCore.MvcChartApp\STKDotNetCore.MvcChartApp.csproj", "{582638F1-1F57-4812-B7D1-B25684669EF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.MvcChartApp", "STKDotNetCore.MvcChartApp\STKDotNetCore.MvcChartApp.csproj", "{582638F1-1F57-4812-B7D1-B25684669EF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.ConsoleAppLogging", "STKDotNetCore.ConsoleAppLogging\STKDotNetCore.ConsoleAppLogging.csproj", "{4A5D7665-8060-4C12-8EBA-02F7F2D6FB1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.ConsoleAppLogging", "STKDotNetCore.ConsoleAppLogging\STKDotNetCore.ConsoleAppLogging.csproj", "{4A5D7665-8060-4C12-8EBA-02F7F2D6FB1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.RealtimeChatApp", "STKDotNetCore.RealtimeChatApp\STKDotNetCore.RealtimeChatApp.csproj", "{CCF9C927-9EF3-4063-8521-430450217F13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.RealtimeChatApp", "STKDotNetCore.RealtimeChatApp\STKDotNetCore.RealtimeChatApp.csproj", "{CCF9C927-9EF3-4063-8521-430450217F13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.RealtimeChartApp", "STKDotNetCore.RealtimeChartApp\STKDotNetCore.RealtimeChartApp.csproj", "{C784EDCF-63F4-42A1-8099-6825B291B904}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -140,6 +142,10 @@ Global
 		{CCF9C927-9EF3-4063-8521-430450217F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCF9C927-9EF3-4063-8521-430450217F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCF9C927-9EF3-4063-8521-430450217F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C784EDCF-63F4-42A1-8099-6825B291B904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C784EDCF-63F4-42A1-8099-6825B291B904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C784EDCF-63F4-42A1-8099-6825B291B904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C784EDCF-63F4-42A1-8099-6825B291B904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
