@@ -69,3 +69,5 @@ Product => [Server => Add Product (changes) => Server Client All] => Changes =>
 Scaffold-DbContext "Server=HO-1-091\MSSQLSERVERS;Database=STKDotNetCoreDb;User ID=sa;Password=Ami123!@#;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context AppDbContext
 
 dotnet ef dbcontext scaffold "Server=HO-1-091\MSSQLSERVERS;Database=STKDotNetCoreDb;User Id=sa;Password=Ami123!@#;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c AppDbContext -f
+
+dotnet tool install --global dotnet-ef --version 8

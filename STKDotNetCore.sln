@@ -50,7 +50,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.ConsoleAppLog
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.RealtimeChatApp", "STKDotNetCore.RealtimeChatApp\STKDotNetCore.RealtimeChatApp.csproj", "{CCF9C927-9EF3-4063-8521-430450217F13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.RealtimeChartApp", "STKDotNetCore.RealtimeChartApp\STKDotNetCore.RealtimeChartApp.csproj", "{C784EDCF-63F4-42A1-8099-6825B291B904}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.RealtimeChartApp", "STKDotNetCore.RealtimeChartApp\STKDotNetCore.RealtimeChartApp.csproj", "{C784EDCF-63F4-42A1-8099-6825B291B904}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.ConsoleAppEFCore", "STKDotNetCore.ConsoleAppEFCore\STKDotNetCore.ConsoleAppEFCore.csproj", "{FD1B31A7-43F3-4D2F-8E2A-029AD438DE5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.ConsoleAppEFCore.Databases", "STKDotNetCore.ConsoleAppEFCore.Databases\STKDotNetCore.ConsoleAppEFCore.Databases.csproj", "{2BA545CA-504B-40AE-A338-9160984CF62D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -146,6 +150,14 @@ Global
 		{C784EDCF-63F4-42A1-8099-6825B291B904}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C784EDCF-63F4-42A1-8099-6825B291B904}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C784EDCF-63F4-42A1-8099-6825B291B904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD1B31A7-43F3-4D2F-8E2A-029AD438DE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD1B31A7-43F3-4D2F-8E2A-029AD438DE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD1B31A7-43F3-4D2F-8E2A-029AD438DE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD1B31A7-43F3-4D2F-8E2A-029AD438DE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA545CA-504B-40AE-A338-9160984CF62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA545CA-504B-40AE-A338-9160984CF62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA545CA-504B-40AE-A338-9160984CF62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA545CA-504B-40AE-A338-9160984CF62D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
