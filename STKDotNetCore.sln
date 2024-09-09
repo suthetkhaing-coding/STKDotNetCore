@@ -60,7 +60,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.MvcDesignApp"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.BlazorWasm", "STKDotNetCore.BlazorWasm\STKDotNetCore.BlazorWasm.csproj", "{D1C6E1D2-515B-40A8-A87D-B73F775C5338}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STKDotNetCore.BlazorWasm2", "STKDotNetCore.BlazorWasm2\STKDotNetCore.BlazorWasm2.csproj", "{C9D54422-6BAC-4FB5-853B-2A2818E21490}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STKDotNetCore.BlazorWasm2", "STKDotNetCore.BlazorWasm2\STKDotNetCore.BlazorWasm2.csproj", "{C9D54422-6BAC-4FB5-853B-2A2818E21490}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
